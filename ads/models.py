@@ -62,3 +62,25 @@ class Click(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     campaign = models.ForeignKey(Campaign, on_delete=models.CASCADE)
     clicked_at = models.DateTimeField(auto_created=True)
+
+
+class SampleA(models.Model):
+    """
+        Replicated
+    """
+    name = models.CharField(max_length=128)
+
+
+class SampleB(models.Model):
+    """
+         Distributed on id
+    """
+    name = models.CharField(max_length=128)
+    sample_a = models.ForeignKey(SampleA, on_delete=models.CASCADE)
+
+
+class SampleC(models.Model):
+    """
+         Distributed on id
+    """
+    name = models.CharField(max_length=128)
